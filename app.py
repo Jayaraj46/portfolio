@@ -5,6 +5,8 @@ from sqlite3 import IntegrityError
 from datetime import date
 from flask_login import UserMixin
 from flask_mail import Mail, Message
+pip install waitress
+
 
 
 app= Flask(__name__)
@@ -228,5 +230,5 @@ def submit():
     conn.close()
     return redirect(url_for('dashboard'))   
 
-# if __name__ == '__main__':
-#     app.run(debug=False,host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=True)
