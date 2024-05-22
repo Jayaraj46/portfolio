@@ -5,7 +5,7 @@ from sqlite3 import IntegrityError
 from datetime import date
 from flask_login import UserMixin
 from flask_mail import Mail, Message
-pip install waitress
+
 
 
 
