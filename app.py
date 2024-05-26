@@ -20,8 +20,8 @@ login_manager.login_view = 'admin'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'wredmansola@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Shreyash@77'
+app.config['MAIL_USERNAME'] = 'jjayaraj715@gmail.com'
+app.config['MAIL_PASSWORD'] = 'jai123@@@@'
 
 mail = Mail(app)
 
@@ -90,17 +90,19 @@ def content(id):
 
 @app.route('/send', methods=['POST','GET'])
 def msg():
+    
     if request.method == 'POST':
         name= request.form['fullname']
         email = request.form['email']
         msg = request.form['message']
         msg = Message(subject='Contact Form',
-                  sender=app.config['MAIL_USERNAME'],
-                  recipients=['jjayaraj715@gmail.com'],
-                  body=f'From: {name}\nEmail: {email}\nMessage: {msg}')
+                sender=app.config['MAIL_USERNAME'],
+                recipients=['jjayaraj715@gmail.com'],
+                body=f'From: {name}\nEmail: {email}\nMessage: {msg}')
         mail.send(msg) 
         return redirect( url_for('msg'))
     return redirect(url_for('contact')) 
+    
 
 
 @app.route('/admin-panel', methods=['POST','GET'])
