@@ -64,7 +64,7 @@ def contact():
 
 @app.route('/resume')
 def resume():
-    file = 'static/files/Jayaraj_Resume.pdf'
+    file = 'static/files/jayaraj_resume.pdf'
     return render_template('resume.html', file=file)
 
 @app.route('/blogs/<int:page>')
